@@ -10,8 +10,9 @@ def hello_world():
 @server.route('/data')
 def return_data():
     return flask.jsonify({
-        'time': [1, 2, 3, 4, 5],
-        'value': [3, 1, 2, 3, 4]
+        'datetime': [1, 2, 3, 4, 5],
+        'reading_value': [3, 1, 2, 3, 4],
+        'sensor_name':'ficus_lyrata'
     })
 
 '''
