@@ -8,7 +8,7 @@ def hello_world():
     return 'Hello, world!'
 
 
-@server.route('/readings/<string:datetime>/<string:primary_sensor_id>/<float:reading_value>"')
+@server.route('/readings/<datetime>/<primary_sensor_id>/<reading_value>', methods=['POST'])
 def return_data(datetime, primary_sensor_id, reading_value):
     return {'datetime':datetime, "id": primary_sensor_id, "reading_value":reading_value}
 
