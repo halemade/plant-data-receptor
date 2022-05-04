@@ -19,14 +19,20 @@ server = Flask(__name__)
 app = Flask(__name__)
 api = Api(server)
 
-class SensorReading(Resource):
-    def post(self, datetime, primary_sensor_id, reading_value):
-        self.reading_value = reading_value
-        self.datetime = datetime
-        self.primary_sensor_id = primary_sensor_id
-        return {'datetime':self.datetime, "id": self.primary_sensor_id, "reading_value": self.reading_value}
+# class SensorReading(Resource):
+#     def post(self, datetime, primary_sensor_id, reading_value):
+#         self.reading_value = reading_value
+#         self.datetime = datetime
+#         self.primary_sensor_id = primary_sensor_id
+#         return {'datetime':self.datetime, "id": self.primary_sensor_id, "reading_value": self.reading_value}
 
-api.add_resource(SensorReading, "/readings/<string:datetime>/<string:primary_sensor_id>/<float:reading_value>")    
+# api.add_resource(SensorReading, "/readings/<string:datetime>/<string:primary_sensor_id>/<float:reading_value>")   
+# 
+class SensorReading(Resource):
+    def post(self, reading_value):
+        return {'reading':reading_value}
+
+api.add_resource(SensorReading, "/readings/<string:reading_value>")    
 
 if __name__ == '__main__':
     server.run(debug=True, host="0.0.0.0", port=8050)
