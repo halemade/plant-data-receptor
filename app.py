@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_restful import Api, Resource
+import datetime
 
 server = Flask(__name__)
 
@@ -10,7 +11,9 @@ def hello_world():
 
 @server.route('/readings/<primary_sensor_id>/<reading_value>', methods=['POST'])
 def return_data(primary_sensor_id, reading_value):
-    reading = {"id": primary_sensor_id, "reading_value":reading_value} 
+    time = datetime.datetime.now()
+    reading = {"id": primary_sensor_id, "reading_value":reading_value, "time":time}
+    time = datetime.datetime.now()
     print(reading)
     return reading
 
