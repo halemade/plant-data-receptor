@@ -8,9 +8,9 @@ def hello_world():
     return 'Hello, world!'
 
 
-@server.route('/readings/<datetime>/<primary_sensor_id>/<reading_value>', methods=['POST'])
-def return_data(datetime, primary_sensor_id, reading_value):
-    reading = {'datetime':datetime, "id": primary_sensor_id, "reading_value":reading_value} 
+@server.route('/readings/<primary_sensor_id>/<reading_value>', methods=['POST'])
+def return_data(primary_sensor_id, reading_value):
+    reading = {"id": primary_sensor_id, "reading_value":reading_value} 
     print(reading)
     return reading
 

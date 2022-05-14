@@ -25,16 +25,14 @@ class Plants(Base):
     __tablename__ = 'plants'
 
     id = Column(Integer, primary_key=True)
-    sensor_id = Column(BigInteger)
-    plant_name = Column(DateTime)
-    common_name = Column(DateTime)
+    sensor_id = Column(Integer)
+    plant_name = Column(String)
+    common_name = Column(String)
     zone = Column(String)
     size = Column(String)
-    x = Column(String)
-    y = Column(BigInteger)
-    src = Column(BigInteger)
-    baseline = Column(BigInteger)
-    water_schedule = Column(BigInteger)
+    x = Column(Integer)
+    y = Column(Integer)
+    src = Column(String)
     water_low = Column(BigInteger)
     water_high = Column(String)
 
@@ -45,10 +43,9 @@ class Readings(Base):
     __tablename__ = 'readings'
 
     id = Column(Integer, primary_key=True)
-    datetime = Column(BigInteger)
-    created_at = Column(DateTime)
-    reading_value = Column(DateTime)
-    reading_type = Column(String)
+    datetime = Column(DateTime)
+    reading_value = Column(Float)
+    primary_sensor_id = Column(Integer)
 
     def __repr__(self):
         return f"<Reading(\n\ttype='{self.reading_type}'\n\treading value='{self.reading_value}'\n)>"
@@ -58,8 +55,8 @@ class Sensors(Base):
     __tablename__ = 'sensors'
 
     id = Column(Integer, primary_key=True)
-    zone = Column(BigInteger)
-    sensor_id = Column(DateTime)
+    zone = Column(Integer)
+    sensor_id = Column(String)
 
     def __repr__(self):
         return f"<Sensor(\n\tname='{self.sensor_id}'\n\tsubject='{self.subject}'\n)>"
