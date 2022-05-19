@@ -1,0 +1,17 @@
+network_alias_id,plant_name,common_name,zone,size,x,y,src,baseline,water_schedule,water_low,water_high
+2004,ficus_lyrata,Fiddle Leaf Fig,1000,10,32,26,ficus_lyrata.png,1000,7,600,1500
+2001,xerosicyos_danguyi,Silver Dollar Plant,1000,2,34,27,xerosicyos_danguyi.png,700,7,300,1200
+2007,ficus_audrey,Ficus Audrey,1001,7,20,2,ficus_audrey.png,1100,7,700,1600
+2008,ficus_elastica_tineke,Rubber Plant,1001,5,24,6,ficus_elastica_tineke.png,900,10,500,1400
+2009,ficus_elastica,Rubber Plant,1001,7,24,4,ficus_elastica.png,900,10,500,1400
+2010,ficus_altissima,Ficus,1001,7,24,1,ficus_altissima.png,1000,7,600,1500
+2011,oreocereus_trollii,Old Man of the Andes,1001,3,22,4,oreocereus_trollii.png,600,14,200,1100
+2002,epiphyllum_anguliger,Ric Rac Cactus,1000,3,18,8,epiphyllum_anguliger.png,800,7,400,1300
+2012,schlumbergera_russelliana,Christmas Cactus,1002,1,7,20,schlumbergera_russelliana.png,900,7,500,1400
+2013,monstera_adansonii,Swiss Cheese Plant,1002,2,1,16,monstera_adansonii.png,1200,7,800,1700
+2014,scindapsus_argyraeus,Satin Pothos,1002,2,2,16,scindapsus_argyraeus.png,900,7,500,1400
+2015,scindapsus_silver_lady,Satin Pothos,1002,2,8,20,scindapsus_silver_lady.png,900,7,500,1400
+2016,euphorbia_trigona,Cactus,1003,2,6,32,euphorbia_trigona.png,600,14,200,1100
+2017,monstera_deliciousa,Monstera,1000,9,28,17,monstera_deliciousa.png,1200,7,800,1700
+2018,phalaenopsis_blume,Moth Orchid,1004,2,45,4,phalaenopsis_blume.png,900,7,500,1400
+2019,lophocereus_marginatus,Fencepost Cactus,1001,6,22,2,lophocereus_marginatus.png,600,14,200,1100

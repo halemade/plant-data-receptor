@@ -24,20 +24,19 @@ Base = declarative_base()
 class Plants(Base):
     __tablename__ = 'plants'
 
-    id = Column(Integer, primary_key=True)
-    sensor_id = Column(Integer)
+    sensor_id = Column(Integer, primary_key=True)
     plant_name = Column(String)
     common_name = Column(String)
-    zone = Column(String)
-    size = Column(String)
+    zone = Column(Integer)
+    size = Column(Integer)
     x = Column(Integer)
     y = Column(Integer)
     src = Column(String)
     water_low = Column(BigInteger)
-    water_high = Column(String)
+    water_high = Column(BigInteger)
 
     def __repr__(self):
-        return f"<Comment(\n\tname='{self.zd_id}'\n\tsubject='{self.subject}'\n)>"
+        return f"< Plant Record(\n\tplant_name='{self.plant_name}'\n\tzone='{self.zone}'\n)>"
 
 class Readings(Base):
     __tablename__ = 'readings'
@@ -48,15 +47,18 @@ class Readings(Base):
     primary_sensor_id = Column(Integer)
 
     def __repr__(self):
-        return f"<Reading(\n\ttype='{self.reading_type}'\n\treading value='{self.reading_value}'\n)>"
+        return f"<Reading(\n\ttype='{self.primary_sensor_id}'\n\treading value='{self.reading_value}'\n)>"
 
 
 class Sensors(Base):
     __tablename__ = 'sensors'
 
     id = Column(Integer, primary_key=True)
+    network_alias = Column(Integer)
+    i2c_address = Column(String)
+    sensor_type = Column(String)
+    location_name = Column(String)
     zone = Column(Integer)
-    sensor_id = Column(String)
 
     def __repr__(self):
         return f"<Sensor(\n\tname='{self.sensor_id}'\n\tsubject='{self.subject}'\n)>"
