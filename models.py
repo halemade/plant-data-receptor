@@ -21,22 +21,22 @@ register_after_fork(engine, dispose_engine)
 
 Base = declarative_base()
 
-class Plants(Base):
-    __tablename__ = 'plants'
+# class Plants(Base):
+#     __tablename__ = 'plants'
 
-    sensor_id = Column(Integer, primary_key=True)
-    plant_name = Column(String)
-    common_name = Column(String)
-    zone = Column(Integer)
-    size = Column(Integer)
-    x = Column(Integer)
-    y = Column(Integer)
-    src = Column(String)
-    water_low = Column(BigInteger)
-    water_high = Column(BigInteger)
+#     sensor_id = Column(Integer, primary_key=True)
+#     plant_name = Column(String)
+#     common_name = Column(String)
+#     zone = Column(Integer)
+#     size = Column(Integer)
+#     x = Column(Integer)
+#     y = Column(Integer)
+#     src = Column(String)
+#     water_low = Column(BigInteger)
+#     water_high = Column(BigInteger)
 
-    def __repr__(self):
-        return f"< Plant Record(\n\tplant_name='{self.plant_name}'\n\tzone='{self.zone}'\n)>"
+#     def __repr__(self):
+#         return f"< Plant Record(\n\tplant_name='{self.plant_name}'\n\tzone='{self.zone}'\n)>"
 
 class Readings(Base):
     __tablename__ = 'readings'
