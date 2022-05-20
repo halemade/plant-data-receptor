@@ -28,10 +28,14 @@ def return_data(primary_sensor_id, reading_value):
         primary_sensor_id = reading["id"]
     )
     session.add(new_reading)
-    session.commit()
+    try:
+        session.commit()
+    except Error as e:
+        print(e)
+        session.rollback()
+    session.close()
     print(reading)
     return reading
-session.close
 
 if __name__ == '__main__':
     server.run(debug=True, host="0.0.0.0", port=8050)

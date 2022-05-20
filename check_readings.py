@@ -21,5 +21,5 @@ session = Session()
 # session.commit()
 
 num_readings = [p.reading_value for p in session.query(RealReadings)]
-breakpoint()
+print(len(num_readings))
 session.close
