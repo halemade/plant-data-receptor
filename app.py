@@ -30,9 +30,8 @@ def return_data(primary_sensor_id, reading_value):
     session.add(new_reading)
     session.commit()
     print(reading)
-    session.close
     return reading
-
+session.close
 
 if __name__ == '__main__':
     server.run(debug=True, host="0.0.0.0", port=8050)

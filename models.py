@@ -75,4 +75,4 @@ class Sensors(Base):
         return f"<Sensor(\n\tname='{self.sensor_id}'\n\tsubject='{self.subject}'\n)>"
 
 # create all the tables
-Base.metadata.create_all(engine)
+# Base.metadata.create_all(engine)
