@@ -1,7 +1,21 @@
-from models import engine, RealReadings, Plants
+from models import RealReadings, Plants
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.sql.expression import func
 import datetime
+import os
+from sqlalchemy import create_engine
+from multiprocessing.util import register_after_fork
+
+def dispose_engine(engine):
+ # dispose SqlAlchemy engine in register_after_fork
+    engine.dispose()
+
+connection_string = "postgresql+psycopg2" + os.environ.get(
+    "DATABASE_URL"
+).lstrip("postgres")
+engine = create_engine(connection_string)
+
+register_after_fork(engine, dispose_engine)
 
 Session = sessionmaker(bind=engine)
 session = Session()
@@ -20,6 +34,6 @@ session = Session()
 # session.add(new_reading)
 # session.commit()
 
-num_readings = [p.reading_value for p in session.query(RealReadings)]
-print(len(num_readings))
+num_readings = session.query(RealReadings).count()
+print(num_readings)
 session.close

@@ -12,8 +12,7 @@ def dispose_engine(engine):
     engine.dispose()
 
 connection_string = "postgresql+psycopg2" + os.environ.get(
-    "DATABASE_URL", "postgres://postgres:docker@127.0.0.1:5436"
-).lstrip("postgres")
+    "DATABASE_URL").lstrip("postgres")
 engine = create_engine(connection_string)
 
 register_after_fork(engine, dispose_engine)
