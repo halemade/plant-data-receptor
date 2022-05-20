@@ -28,6 +28,7 @@ def return_data(primary_sensor_id, reading_value):
         primary_sensor_id = reading["id"]
     )
     session.add(new_reading)
+    
     try:
         session.commit()
     except Error as e:

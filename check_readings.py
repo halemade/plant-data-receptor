@@ -34,6 +34,17 @@ session = Session()
 # session.add(new_reading)
 # session.commit()
 
-num_readings = session.query(RealReadings).count()
+num_readings = [p.primary_sensor_id for p in session.query(RealReadings)]
 print(num_readings)
 session.close
+
+# from sqlalchemy import inspect
+# inspector = inspect(engine)
+# schemas = inspector.get_schema_names()
+
+# for schema in schemas:
+#     print("schema: %s" % schema)
+#     for table_name in inspector.get_table_names(schema=schema):
+#         print(table_name.upper())
+#         for column in inspector.get_columns(table_name, schema=schema):
+#             print("Column: %s" % column)
