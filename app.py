@@ -2,7 +2,7 @@ from flask import Flask
 from flask_restful import Api, Resource
 import datetime
 
-from models import engine, Readings
+from models import engine, RealReadings
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.sql.expression import func
 
@@ -22,7 +22,7 @@ def return_data(primary_sensor_id, reading_value):
     time = datetime.datetime.now()
     adjusted_for_timezone = time - datetime.timedelta(hours=4)
     reading = {"id": primary_sensor_id, "reading_value":reading_value, "time":adjusted_for_timezone.strftime(format="%Y-%m-%d %H:%M:%S")}
-    new_reading = Readings(
+    new_reading = RealReadings(
         datetime = reading["time"],
         reading_value = reading["reading_value"],
         primary_sensor_id = reading["id"]
@@ -30,8 +30,9 @@ def return_data(primary_sensor_id, reading_value):
     session.add(new_reading)
     session.commit()
     print(reading)
+    session.close
     return reading
 
-session.close
+
 if __name__ == '__main__':
     server.run(debug=True, host="0.0.0.0", port=8050)
