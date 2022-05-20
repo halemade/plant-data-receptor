@@ -39,4 +39,4 @@ def return_data(primary_sensor_id, reading_value):
     return reading
 
 if __name__ == '__main__':
-    server.run(debug=True, host="0.0.0.0", port=8050)
+    server.run()
