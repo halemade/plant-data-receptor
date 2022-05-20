@@ -30,7 +30,6 @@ session = Session()
 #         reading_value = reading["reading_value"],
 #         primary_sensor_id = reading["id"]
 #     )
-# breakpoint()
 # session.add(new_reading)
 # session.commit()
 

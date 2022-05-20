@@ -21,7 +21,7 @@ def return_data(primary_sensor_id, reading_value):
     session = Session()
     time = datetime.datetime.now()
     adjusted_for_timezone = time - datetime.timedelta(hours=4)
-    reading = {"id": str(primary_sensor_id), "reading_value":int(reading_value), "time":adjusted_for_timezone.strftime(format="%Y-%m-%d %H:%M:%S")}
+    reading = {"id": str(primary_sensor_id), "reading_value":float(reading_value), "time":adjusted_for_timezone.strftime(format="%Y-%m-%d %H:%M:%S")}
     new_reading = RealReadings(
         datetime = reading["time"],
         reading_value = reading["reading_value"],
