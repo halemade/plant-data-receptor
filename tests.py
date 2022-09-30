@@ -10,7 +10,7 @@ reading_value =3.26
 
 
 session = requests.Session()
-session.auth = ('taylor', 'dataliberation')
+session.auth = ('username', 'pw')
 
 auth = session.post(BASE)
 response = requests.post(workspace_base+f"/readings/{datetime}/{sensor_id}/{reading_value}")
